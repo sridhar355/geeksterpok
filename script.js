@@ -26,7 +26,6 @@ const fetchPokemon = () => {
             description:pokemon.species.url
         }))
         pokemonArray = firstGenPokemon;
-        // console.log(promises);
         console.log(firstGenPokemon);
         createPokemonCards(firstGenPokemon);
     })
@@ -57,19 +56,16 @@ function createPokemonCards(pokemons){
 }
 
 function createPokemonCard(pokemon) {
-    // total card
     const flipCard = document.createElement("div")
     flipCard.classList.add("flip-card")
     flipCard.id = `${pokemon.name}`
     pokedex.append(flipCard)
-    
-    // front & back container
+
     const flipCardInner = document.createElement("div")
     flipCardInner.classList.add("flip-card-inner")
     flipCardInner.id = `${pokemon.type}`
     flipCard.append(flipCardInner)
 
-    // front of card
     const frontCard = document.createElement("div")
     frontCard.classList.add('front-pokemon-card')
 
@@ -92,8 +88,7 @@ function createPokemonCard(pokemon) {
     frontPokeType.classList.add("front-pokemon-type")
 
     frontCard.append(frontImage, frontPokeID, frontPokeName, frontDescription, frontPokeType)
-    
-    // back of card
+  
     const backCard = document.createElement("div")
     backCard.classList.add('back-pokemon-card')
 
